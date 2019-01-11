@@ -1,19 +1,7 @@
 <?php
-$a = 5;
-$b = '05';
-var_dump($a == $b); //true, так как сравнение идёт с приведением типов
-echo  '<br>';
-var_dump((int)'012345'); //12345, так как поиск числа идёт в строке и даёт результат при встрече с числом, отличным от нуля
-echo  '<br>';
-var_dump((float)123.0 === (int)123.0);//false, так как сравнение идёт без приведения типов, а они разные
-echo  '<br>';
-var_dump((int)0 === (int)'hello, world');//true, так как при поиске числа в строке без чисел результатом будет 0, т.е 0 === 0
-?>
 
-<?php
-
-$title = 'Lesson 1';
-$head = 'Lesson one';
+$title = 'Lesson 2';
+$head = 'Lesson two';
 $year = date('Y');
 ?>
 
@@ -25,25 +13,144 @@ $year = date('Y');
 </head>
 <body>
 <h1><?= $head?></h1>
-
+<p>Task 1.</p>
+<p>
 <?php
 
-$x = 3;
-$y = 5;
+$a = rand(-20, 20);
+$b = rand(-10,10);
 
-echo $x, $y;
+if ($a>0 && $b>0)
+{
+    echo $a - $b;
+} elseif ($a<0 && $b<0)
+{
+    echo $a * $b;
+} else
+{
+    echo $a + $b;
+}
 
-echo '<br>';
+?>
+</p>
+<p>Task 2.</p>
+<?php
 
-$x = $x + $y;
-$y = $x - $y;
-$x = $x - $y;
+$x = rand(0, 15);
 
-echo $x, $y;
+switch ($x)
+{
+    case 0:
+        echo 0 . '<br>';
+    case 1:
+        echo 1 . '<br>';
+    case 2:
+        echo 2 . '<br>';
+    case 3:
+        echo 3 . '<br>';
+    case 4:
+        echo 4 . '<br>';
+    case 5:
+        echo 5 . '<br>';
+    case 6:
+        echo 6 . '<br>';
+    case 7:
+        echo 7 . '<br>';
+    case 8:
+        echo 8 . '<br>';
+    case 9:
+        echo 9 . '<br>';
+    case 10:
+        echo 10 . '<br>';
+    case 11:
+        echo 11 . '<br>';
+    case 12:
+        echo 12 . '<br>';
+    case 13:
+        echo 13 . '<br>';
+    case 14:
+        echo 14 . '<br>';
+    case 15:
+        echo 15 . '<br>';
+}
 
 
 ?>
+<p>Task 3.</p>
 
+<?php
+
+function sum($arg1, $arg2)
+{
+    return $arg1 + $arg2;
+}
+
+function substract($arg1, $arg2)
+{
+    return $arg1 - $arg2;
+}
+
+function mult($arg1, $arg2)
+{
+    return $arg1 * $arg2;
+}
+
+function div($arg1, $arg2)
+{
+    return $arg1 / $arg2;
+}
+?>
+<pre>
+    function sum($arg1, $arg2)
+{
+    return $arg1 + $arg2;
+}
+
+    function substract($arg1, $arg2)
+{
+    return $arg1 - $arg2;
+}
+
+    function mult($arg1, $arg2)
+{
+    return $arg1 * $arg2;
+}
+
+    function div($arg1, $arg2)
+{
+    return $arg1 / $arg2;
+}
+</pre>
+<p>Task 4.</p>
+<?php
+
+function mathOperation($arg1, $arg2, $oper)
+{
+    switch ($oper)
+    {
+        case '+':
+            return sum($arg1, $arg2);
+            break;
+        case '-':
+            return substract($arg1, $arg2);
+            break;
+        case '*':
+            return mult($arg1, $arg2);
+            break;
+        case '/':
+            return div($arg1, $arg2);
+            break;
+    }
+}
+
+echo mathOperation(2,3,'*');
+
+
+?>
+<p>Task 5.</p>
+<?php
+
+?>
 
 
 
