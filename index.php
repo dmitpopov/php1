@@ -1,7 +1,7 @@
 <?php
 
-$title = 'Lesson 2';
-$head = 'Lesson two';
+$title = 'Lesson 3';
+$head = 'Lesson three';
 $year = date('Y');
 ?>
 
@@ -16,19 +16,16 @@ $year = date('Y');
 <p>Task 1.</p>
 <p>
 <?php
-
-$a = rand(-20, 20);
-$b = rand(-10,10);
-
-if ($a>0 && $b>0)
+$r = 1;
+while ($r<=100)
 {
-    echo $a - $b;
-} elseif ($a<0 && $b<0)
-{
-    echo $a * $b;
-} else
-{
-    echo $a + $b;
+    if ($r %3 == 0)
+    {
+        echo $r . '<br>';
+        $r++;
+    } else {
+        $r++;
+    }
 }
 
 ?>
@@ -36,121 +33,88 @@ if ($a>0 && $b>0)
 <p>Task 2.</p>
 <?php
 
-$x = rand(0, 15);
+$y = 0;
 
-switch ($x)
-{
-    case 0:
-        echo 0 . '<br>';
-    case 1:
-        echo 1 . '<br>';
-    case 2:
-        echo 2 . '<br>';
-    case 3:
-        echo 3 . '<br>';
-    case 4:
-        echo 4 . '<br>';
-    case 5:
-        echo 5 . '<br>';
-    case 6:
-        echo 6 . '<br>';
-    case 7:
-        echo 7 . '<br>';
-    case 8:
-        echo 8 . '<br>';
-    case 9:
-        echo 9 . '<br>';
-    case 10:
-        echo 10 . '<br>';
-    case 11:
-        echo 11 . '<br>';
-    case 12:
-        echo 12 . '<br>';
-    case 13:
-        echo 13 . '<br>';
-    case 14:
-        echo 14 . '<br>';
-    case 15:
-        echo 15 . '<br>';
-}
+do {
+    if ($y == 0)
+    {
+        echo "$y - это ноль" . '<br>';
+    } elseif ($y % 2 == 0)
+    {
+        echo "$y - это четное число" . '<br>';
+    } else {
+        echo "$y - это нечетное число" . '<br>';
+    }
 
+    $y++;
+} while($y<=10)
+;
 
 ?>
 <p>Task 3.</p>
 
 <?php
+$regions = ['Moscow region'=>['Stupino', 'Klin', 'Zelenogorsk', 'Krasnogorsk'],
+    'Leningrad region'=>['Pushkin', 'Kirovsk', 'Vyborg'],
+    'Rjazan region'=>['Rjazan', 'Kasimov', 'Rjibnoe']];
 
-function sum($arg1, $arg2)
+foreach ($regions as $key => $value)
 {
-    return $arg1 + $arg2;
-}
-
-function substract($arg1, $arg2)
-{
-    return $arg1 - $arg2;
-}
-
-function mult($arg1, $arg2)
-{
-    return $arg1 * $arg2;
-}
-
-function div($arg1, $arg2)
-{
-    return $arg1 / $arg2;
-}
-?>
-<pre>
-    function sum($arg1, $arg2)
-{
-    return $arg1 + $arg2;
-}
-
-    function substract($arg1, $arg2)
-{
-    return $arg1 - $arg2;
-}
-
-    function mult($arg1, $arg2)
-{
-    return $arg1 * $arg2;
-}
-
-    function div($arg1, $arg2)
-{
-    return $arg1 / $arg2;
-}
-</pre>
-<p>Task 4.</p>
-<?php
-
-function mathOperation($arg1, $arg2, $oper)
-{
-    switch ($oper)
+    echo '<b>' . $key . ':' . '</b>' . '<br>';
+    foreach ($value as $key1 => $value1)
     {
-        case '+':
-            return sum($arg1, $arg2);
-            break;
-        case '-':
-            return substract($arg1, $arg2);
-            break;
-        case '*':
-            return mult($arg1, $arg2);
-            break;
-        case '/':
-            return div($arg1, $arg2);
-            break;
+        echo $value1 . ';' . '<br>';
     }
 }
 
-echo mathOperation(2,3,'*');
-
-
 ?>
-<p>Task 5.</p>
+
+<p>Task 4-5.</p>
 <?php
 
+function translit($arg)
+{
+
+    $trans = ['а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e', 'ё' => 'jo', 'ж' => 'zh', 'з' => 'z',
+        'и' => 'i', 'й' => 'j', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't',
+        'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh', 'щ' => 'shj', 'ъ' => '\'', 'ы' => 'ji', 'ь' => '\'',
+        'э' => 'je', 'ю' => 'ju', 'я' => 'ja',
+
+        'А' => 'A', 'Б' => 'B', 'В' => 'V', 'Г' => 'G', 'Д' => 'D', 'Е' => 'E', 'Ё' => 'JO', 'Ж' => 'ZH', 'З' => 'Z',
+        'И' => 'I', 'Й' => 'J', 'К' => 'K', 'Л' => 'L', 'М' => 'M', 'Н' => 'N', 'О' => 'O', 'П' => 'P', 'Р' => 'R', 'С' => 'S', 'Т' => 'T',
+        'У' => 'U', 'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C', 'Ч' => 'CH', 'Ш' => 'SH', 'Щ' => 'SHJ', 'Ъ' => '\'', 'Ы' => 'JI', 'Ь' => '\'',
+        'Э' => 'JE', 'Ю' => 'JU', 'Я' => 'JA', ' ' => '_'];
+
+
+    return strtr($arg, $trans);
+
+}
+$str1 = 'Транслитерация нужна для URL';
+
+ echo translit($str1);
+
 ?>
+<p>Task 6.</p>
+
+<?php
+$menu = ['1' => ['1)', '2)', '3)'],
+        '2' => ['I', 'II', 'III'],
+        '3' => ['a)', 'b)', 'c)']];
+?>
+
+<ul><?php foreach ($menu as $key=>$value) : ?>
+        <li><?=  $key ?>
+            <?php if (is_array($value)):?>
+                <ul>
+                    <?php foreach ($value as $key2=>$value2):?>
+                    <li><?= $value2?></li>
+                    <?php endforeach;?>
+                </ul>
+            <?php endif;?>
+        </li>
+    <?php endforeach;?>
+</ul>
+
 
 
 
