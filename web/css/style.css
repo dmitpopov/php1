@@ -1,0 +1,28 @@
+body {
+    background-color: olivedrab;
+    font-family: sans-serif;
+}
+
+.gal {
+    text-align: center;
+}
+
+.gal h3 {
+    text-decoration: underline;
+}
+
+.gal div {
+    display: inline-block;
+}
+
+.gal a {
+    display: block;
+}
+
+.gal img {
+    margin: 15px;
+}
+
+.gal img:hover {
+    outline: 2px solid red;
+}
